@@ -10,7 +10,8 @@ function validateAttempt(attempt) {
     resultMessage = "Valor fora dos limites!";
   }
   else if (isRightNumber(number)) {
-    resultMessage = "Você acertou!";
+    createWinMessage();
+    return;
   }
   else {
     resultMessage = checkDifference(number);
@@ -45,3 +46,16 @@ function createResultElement(message) {
 
   attemptElement.appendChild(resultMessage);
 }
+
+function createWinMessage() {
+  document.body.innerHTML = `
+    <h2>Você acertou!</h2>
+    <h3>O número era ${secretNumber}</h3>
+    <button class="play-again" id="play-again">Jogar Novamente</button>
+  `;
+}
+
+document.body.addEventListener('click', e => {
+  if (e.target.id === 'play-again')
+    window.location.reload();
+})

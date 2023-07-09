@@ -10,7 +10,6 @@ recognition.start();
 
 function onSpreak(e) {
   let attempt = e.results[0][0].transcript;
-  console.log(attempt);
   createAttemptElement(attempt);
   validateAttempt(attempt);
 }

@@ -7,7 +7,7 @@ const greaterValue = document.getElementById("greater-value");
 lesserValue.innerHTML = minValue;
 greaterValue.innerHTML = maxValue;
 
-console.log(secretNumber);
+console.log("Número Secreto: " + secretNumber);
 
 function generateRandomNumber(minValue, maxValue) {
   return Math.floor(Math.random() * (maxValue - minValue + 1) + minValue);
